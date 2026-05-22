@@ -89,7 +89,7 @@ export function GamesSection() {
                     <Button asChild size="sm" variant="outline" className="h-8 text-xs gap-1.5">
                       <Link href={game.repoUrl} target="_blank" rel="noopener noreferrer">
                         <IconBrandGithub className="w-3.5 h-3.5" />
-                        Código
+                        Cï¿½digo
                       </Link>
                     </Button>
                   )}
@@ -128,17 +128,10 @@ export function GamesSection() {
                 </div>
 
                 <div className="flex gap-2 mt-auto">
-                  {game.playUrl && (
-                    <Button asChild size="sm" variant="ghost" className="h-7 text-xs px-2 gap-1">
-                      <Link href={game.playUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-3 h-3" /> Jogar
-                      </Link>
-                    </Button>
-                  )}
                   {game.repoUrl && (
                     <Button asChild size="sm" variant="ghost" className="h-7 text-xs px-2 gap-1">
                       <Link href={game.repoUrl} target="_blank" rel="noopener noreferrer">
-                        <IconBrandGithub className="w-3 h-3" /> Código
+                        <IconBrandGithub className="w-3 h-3" /> Cï¿½digo
                       </Link>
                     </Button>
                   )}
