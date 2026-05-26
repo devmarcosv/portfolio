@@ -3,17 +3,15 @@
 import { siteConfig } from "@/data/config";
 import { MapPin, Calendar, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { easeOut } from "framer-motion";
+import { TimelineSection } from "@/components/sections/TimelineSection";
 import Image from "next/image";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-80px" },
-  transition: {
-    duration: 0.55,
-    delay,
-    ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-  },
+  transition: { duration: 0.55, delay, ease: easeOut },
 });
 
 const highlights = [
@@ -47,6 +45,7 @@ export function AboutSection() {
           <h2 className="text-3xl font-semibold tracking-tight">Quem sou eu</h2>
         </motion.div>
 
+        {/* Bio + Foto */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
 
           {/* Foto */}
@@ -60,8 +59,8 @@ export function AboutSection() {
                 sizes="(max-width: 1024px) 80vw, 320px"
                 priority
               />
-              {/* Fallback visual quando não há foto */}
-              <div className="absolute inset-0 flex items-center justify-center bg-muted/40 text-muted-foreground/20 text-8xl font-semibold select-none">
+              {/* Fallback com iniciais quando não há foto */}
+              <div className="absolute inset-0 flex items-center justify-center bg-muted/40 text-muted-foreground/20 text-8xl font-semibold select-none -z-10">
                 {siteConfig.name
                   .split(" ")
                   .slice(0, 2)
@@ -73,7 +72,6 @@ export function AboutSection() {
 
           {/* Bio + Info cards */}
           <div className="lg:col-span-3 flex flex-col gap-6">
-
             <motion.div {...fadeUp(0.14)} className="space-y-4">
               <p className="text-muted-foreground leading-relaxed text-base">
                 {siteConfig.bio}
@@ -86,7 +84,6 @@ export function AboutSection() {
               </p>
             </motion.div>
 
-            {/* Info cards */}
             <motion.div {...fadeUp(0.2)} className="space-y-3">
               {highlights.map(({ icon: Icon, label, value }) => (
                 <div
@@ -103,9 +100,12 @@ export function AboutSection() {
                 </div>
               ))}
             </motion.div>
-
           </div>
         </div>
+
+        {/* Timeline de experiências */}
+        <TimelineSection />
+
       </div>
     </section>
   );

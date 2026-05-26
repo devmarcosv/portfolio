@@ -14,9 +14,10 @@ export const skills: Skill[] = [
   { name: "HTML / CSS", category: "frontend", level: "expert" },
 
   // Backend
-  { name: "Node.js", category: "backend", level: "expert" },
-  { name: "Express", category: "backend", level: "advanced" },
-  { name: "REST APIs", category: "backend", level: "expert" },
+  { name: "Node", category: "backend", level: "advanced" },
+  { name: "Laravel", category: "backend", level: "advanced" },
+  { name: "Django", category: "backend", level: "intermediate" },
+  { name: "REST APIs", category: "backend", level: "advanced" },
   { name: "PostgreSQL", category: "backend", level: "advanced" },
   { name: "MongoDB", category: "backend", level: "intermediate" },
 
@@ -26,7 +27,7 @@ export const skills: Skill[] = [
 
   // Tools
   { name: "Git / GitHub", category: "tools", level: "expert" },
-  { name: "Docker", category: "tools", level: "intermediate" },
+  { name: "Docker", category: "tools", level: "advanced" },
   { name: "Figma", category: "tools", level: "intermediate" },
 ];
 
